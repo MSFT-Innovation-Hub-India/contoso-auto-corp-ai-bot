@@ -35,6 +35,15 @@ These are called by the Agent based on the customer/user input
 The folder documents contains a PDF which is the user manual of Hero Honda HF100 Bike from the internet. Multimodal data extraction was used to extract insights from the text and images in this document, and the resulting enriched textual data is generated, and saved to file 'heromotocorp-sample-understood.md'. The source code of the multimodal data extraction is not included in this repo.
 This could need to be uploaded to Azure AI Search, an index created, a semantic configration created and these parameters populated in the .env file of the app.
 
+### SQL data setup
+
+Run the DB Scripts provided under the 'scripts' folder on an Azure SQL Database to:
+a) db-create.sql - create all the database tables and populate them with sample data
+b) capture-service-rating.sql - create a stored procedure that the python code in the Agent App will use to store customer feedback
+c) create_service_schedule_sp.sql - create a stored procedure that the python code in the Agent App will use to create a service appointment
+d) get_embeddings_sp.sql - create a stored procedure that Azure Data Studio will use to generate an embedding for the natural language search input text provided by the Analyst. This embedding will then be used to perform cosine based search to finding matching neighbours from the feedback rating table.
+
+
 ### sql-notebooks
 
 This folder contains a jupyter notebook that uses the SQL Kernel. It contains a **Notebook-1.ipynb**
@@ -101,6 +110,7 @@ To analyze customer feedback, run the Jupyter Notebook Notebook-1.ipynb
 You can experiment with different conditions when performing a combination of structured and unstructured data input.
 Use Azure Data Studio to work with this notebook. See the video below for a demonstration of it.
 
+![alt text](image.png)
 
 ### Tools and Utilities
 #### Database Tools
