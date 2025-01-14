@@ -1,0 +1,10 @@
+langgraph-0.2.56
+langsmith
+langchain-openai
+langchain_community
+langchain_experimental
+python-dotenv
+ipython
+pyodbc
+websockets
+azure-search-documents
